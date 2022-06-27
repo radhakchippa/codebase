@@ -1,6 +1,19 @@
 package com.rk.bitmanipulation;
 //CCI - 5.1 question.
 //Insert value of M in N from positions j to i.
+
+/**
+ * // check ranges on i and j since the question didn't mention anything about them.
+ * // skip checking N and M as question states it is possible to put N in M.
+ * Writeup:
+ * Idea is to first mask the bits from position i to j inside N with 0 bits. -- create a Mask and do & operation
+ * then create move the bits in M to their destination position i and j.
+ * now do or operation on the M and the N to get the final result.
+ * O(i-j)
+ *
+ *
+ * */
+
 public class Insertion {
 
     public static int replace(int N, int M, int i, int j) {
@@ -26,15 +39,3 @@ public class Insertion {
         System.out.println("replaced positions i: 29, j: 31 in M \n"+Integer.toBinaryString(c));
     }
 }
-
-/**
- * // check ranges on i and j since the question didn't mention anything about them.
- * // skip checking N and M as question states it is possible to put N in M.
- * Writeup:
- * Idea is to first mask the bits from position i to j inside N with 0 bits. -- create a Mask and do & operation
- * then create move the bits in M to their destination position i and j.
- * now do or operation on the M and the N to get the final result.
- * O(i-j)
- *
- *
- * */
